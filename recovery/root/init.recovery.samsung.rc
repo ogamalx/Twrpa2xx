@@ -5,4 +5,4 @@ on init
     mkdir /sec_efs
 
 #to cut charging battery path
-    write /sys/class/power_supply/battery/siop_level 0
+write /sys/class/power_supply/battery/siop_level 0
