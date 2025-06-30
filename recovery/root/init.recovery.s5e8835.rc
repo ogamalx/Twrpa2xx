@@ -17,3 +17,13 @@ service watchdogd /system/bin/watchdogd 10 20
     class core
     oneshot
     seclabel u:r:watchdogd:s0
+
+service healthd /system/bin/healthd
+    class core
+    critical
+    seclabel u:r:healthd:s0
+
+service adbd /system/bin/adbd
+    class main
+    oneshot
+    seclabel u:r:adbd:s0
