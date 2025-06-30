@@ -1,0 +1,10 @@
+# Proprietary files for a26x
+# These blobs are needed for building TWRP
+vendor/lib64/libkeymaster3device.so
+vendor/lib64/libMcClient.so
+system/bin/e2fsck
+system/bin/mke2fs
+system/bin/sgdisk
+system/bin/tune2fs
+system/bin/resize2fs
+system/bin/adb

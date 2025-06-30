@@ -4,5 +4,18 @@ on init
     mkdir /efs
     mkdir /sec_efs
 
-#to cut charging battery path
+    # to cut charging battery path
     write /sys/class/power_supply/battery/siop_level 0
+
+on fs
+    mkdir /mnt/vendor/efs 0770 system system
+    mount ext4 /dev/block/by-name/EFS /mnt/vendor/efs ro wait
+
+on post-fs-data
+    restorecon_recursive /efs
+    restorecon_recursive /sec_efs
+
+service efs_sync /system/bin/efs_sync
+    class main
+    user root
+    oneshot
